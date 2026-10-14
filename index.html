@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Math Arcade</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-rounded, "Avenir Next", system-ui, sans-serif; color: #263047; background: radial-gradient(circle at 10% 15%, #fff0d7, transparent 35%), radial-gradient(circle at 90% 85%, #dcecff, transparent 40%), #fffaf5; }
+    main { min-height: 100vh; min-height: 100dvh; max-width: 1100px; margin: auto; padding: clamp(20px, 4vw, 44px); display: flex; flex-direction: column; }
+    header h1 { font-size: clamp(32px, 5vw, 56px); letter-spacing: -1.5px; margin: 0; }
+    header p { color: #6e7b92; font-size: clamp(15px, 2vw, 20px); margin: 8px 0 28px; }
+    .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .game { border: 3px solid transparent; border-radius: 28px; background: #ffe2d8; padding: clamp(20px, 3vw, 34px); min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: inherit; box-shadow: 0 12px 28px #26304714; transition: transform .15s, border-color .15s; }
+    .game:hover { transform: translateY(-4px); border-color: #f7b7a3; }
+    .game:focus-visible { outline: 4px solid #637dff; outline-offset: 4px; }
+    .emoji { font-size: 52px; }
+    .name { font-size: clamp(22px, 3vw, 31px); font-weight: 850; margin: 12px 0 5px; }
+    .description { color: #596477; font-size: 16px; font-weight: 600; }
+    .coming { background: #e6edff; border: 3px dashed #bcccf8; box-shadow: none; cursor: default; }
+    .coming:hover { transform: none; border-color: #bcccf8; }
+    footer { margin-top: auto; padding-top: 22px; color: #8993a4; font-size: 13px; }
+    @media (orientation: landscape) and (min-width: 700px) { html, body { height: 100%; overflow: hidden; } main { height: 100dvh; min-height: 0; } .games { flex: 1; min-height: 0; } .game { min-height: 0; } }
+    @media (max-width: 600px) { .games { grid-template-columns: 1fr; } .game { min-height: 175px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🎮 Math Arcade</h1>
+      <p>Choose a game and have fun with math!</p>
+    </header>
+    <section class="games" aria-label="Math games">
+      <a class="game" href="games/four-multiplication/">
+        <span class="emoji">✖️</span>
+        <span><div class="name">Four Multiplication</div><div class="description">Four fun ways to practice multiplication →</div></span>
+      </a>
+      <div class="game coming">
+        <span class="emoji">✨</span>
+        <span><div class="name">More Games Soon!</div><div class="description">New math adventures are on the way.</div></span>
+      </div>
+    </section>
+    <footer>Made for curious math minds 🌟</footer>
+  </main>
+</body>
+</html>

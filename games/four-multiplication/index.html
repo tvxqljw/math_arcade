@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Multiplication Arcade</title><style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#fff0d7,transparent 45%),#f8fbff;font-family:ui-rounded,'Avenir Next',system-ui,sans-serif;color:#28334c}main{max-width:1100px;margin:auto;padding:28px 18px}h1{font-size:clamp(30px,5vw,52px);margin:0}p{color:#69768e;margin:5px 0 24px;font-weight:600}.games{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.game{border:4px solid transparent;border-radius:26px;padding:22px;text-align:left;min-height:168px;cursor:pointer;color:#28334c;box-shadow:0 8px 20px #26304713}.game.active{border-color:#303c5b}.game:hover{transform:translateY(-3px)}.game .emoji{display:block;font-size:43px}.game strong{display:block;font-size:clamp(19px,3vw,29px);margin:8px 0 3px}.game small{font-size:14px;color:#57647a}.flash{background:#ffe2d8}.missing{background:#e2ebff}.factor{background:#ddf5e6}.mistake{background:#fff0b9}.panel{background:white;border-radius:28px;padding:24px;margin-top:22px;box-shadow:0 14px 40px #26304712}.bar,.buttons,.student{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.chip{border:2px solid #dce3f2;background:white;border-radius:14px;padding:11px 16px;font-weight:850;cursor:pointer;font-size:16px;color:#293653}.chip.on{background:#303c5b;color:white}.stage{margin:18px 0;background:linear-gradient(130deg,#f0f5ff,#fff9e8);border-radius:24px;min-height:280px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:22px}.eyebrow{font-size:14px;font-weight:900;letter-spacing:2px;color:#7a879c}.question{font-size:clamp(43px,8vw,92px);font-weight:1000;margin:15px 0;line-height:1.2}.hint{color:#7c8899;font-weight:700}.answer{color:#14865c;font-size:clamp(27px,4vw,42px);font-weight:900;margin-top:17px}.hidden{display:none}.buttons button{flex:1;min-width:175px;border:0;border-radius:18px;padding:19px;font-size:clamp(17px,2.4vw,23px);font-weight:900;cursor:pointer}.new{background:#657cff;color:white}.show{background:#edf0f7;color:#33405b}.student{margin-top:18px;border:1px solid #e3e8f5;border-radius:18px;padding:15px;background:#f8faff}.student strong{font-size:23px}.note{color:#7a8597;font-size:13px;margin-top:5px}.student button{border:1px solid #dce3f2;background:white;border-radius:12px;padding:12px;font-weight:800;cursor:pointer}@media(max-width:600px){.games{gap:9px}.game{padding:13px;min-height:145px;border-radius:18px}.game .emoji{font-size:33px}.game small{font-size:12px}.panel{padding:14px}.stage{min-height:240px}.buttons button{min-width:130px}}
+
+/* iPad landscape: a single-screen classroom dashboard */
+@media (orientation:landscape) and (min-width:700px) {
+ html,body{height:100%;overflow:hidden}
+ main{height:100vh;height:100dvh;max-width:1500px;display:flex;flex-direction:column;padding:clamp(10px,1.6vh,18px) clamp(14px,2vw,25px);overflow:hidden}
+ h1{font-size:clamp(25px,3.2vh,36px);line-height:1.15}
+ p{font-size:13px;margin:2px 0 clamp(8px,1.2vh,14px)}
+ .workspace{display:grid;grid-template-columns:minmax(0,0.92fr) minmax(0,1.4fr);gap:clamp(12px,1.7vw,22px);flex:1;min-height:0}
+ .games{height:100%;min-height:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(9px,1.3vw,16px)}
+ .game{min-height:0;height:100%;padding:clamp(12px,2.1vh,23px);border-radius:22px;display:flex;flex-direction:column;justify-content:center}
+ .game .emoji{font-size:clamp(31px,5vh,51px)}
+ .game strong{font-size:clamp(18px,2.35vw,27px);line-height:1.13;margin:clamp(7px,1vh,13px) 0 5px}
+ .game small{font-size:clamp(11px,1.25vw,15px);line-height:1.3}
+ .panel{margin:0;min-width:0;min-height:0;display:flex;flex-direction:column;padding:clamp(12px,1.9vh,22px);border-radius:23px}
+ .bar{flex-shrink:0;gap:6px}
+ .bar b{font-size:clamp(12px,1.35vw,16px)}
+ .chip{padding:clamp(7px,1.1vh,11px) clamp(9px,1vw,15px);font-size:clamp(12px,1.3vw,16px)}
+ .stage{flex:1;min-height:0;margin:clamp(9px,1.5vh,17px) 0;padding:10px 14px;border-radius:18px}
+ .eyebrow{font-size:clamp(10px,1.2vw,13px)}
+ .question{font-size:clamp(37px,6.2vh,74px);margin:clamp(6px,1.1vh,14px) 0;line-height:1.08;overflow-wrap:anywhere}
+ .hint{font-size:clamp(11px,1.3vw,15px)}
+ .answer{font-size:clamp(22px,3.4vh,36px);margin-top:clamp(7px,1.2vh,13px);overflow-wrap:anywhere}
+ .buttons{flex-shrink:0;flex-wrap:nowrap;gap:9px}
+ .buttons button{min-width:0;padding:clamp(10px,1.7vh,18px) 7px;font-size:clamp(14px,1.6vw,20px);border-radius:14px}
+ .student{flex-shrink:0;margin-top:clamp(8px,1.3vh,14px);padding:clamp(8px,1.25vh,13px);gap:7px;border-radius:15px}
+ .student strong{font-size:clamp(15px,1.8vw,22px)}
+ .student button{padding:8px;font-size:12px}
+ .student .chip{padding:7px;font-size:12px}
+ .note{font-size:10px;margin-top:2px}
+}
+@media (orientation:landscape) and (min-width:700px) and (max-height:650px){
+ .note{display:none}
+ .student{padding:7px}
+ .game .emoji{font-size:28px}
+ .game strong{font-size:18px}
+ .game small{font-size:11px}
+ .panel{padding:11px}
+ .stage{margin:8px 0}
+}
+@media (orientation:portrait), (max-width:699px){
+ .workspace{display:block}
+}
+</style></head><body><main><h1>🎯 Multiplication Arcade</h1><p>Pick a game. Take the challenge. Be a math star! ⭐</p><div class="workspace"><div class="games"><button class="game flash active" data-game="flash"><span class="emoji">⚡</span><strong>Flash Challenge</strong><small>Answer as fast as you can!</small></button><button class="game missing" data-game="missing"><span class="emoji">🧩</span><strong>Missing Number</strong><small>Find the mystery number!</small></button><button class="game factor" data-game="factor"><span class="emoji">🕵️</span><strong>Factor Detective</strong><small>Find all factor pairs!</small></button><button class="game mistake" data-game="mistake"><span class="emoji">🔍</span><strong>Find the Mistake</strong><small>Correct or incorrect?</small></button></div><section class="panel"><div class="bar"><div><b>LEVEL </b><button class="chip on" data-level="10">× 1–10</button> <button class="chip" data-level="12">× 1–12</button></div><b id="gameTitle">⚡ Flash Challenge</b></div><div class="stage" aria-live="polite"><div class="eyebrow">YOUR CHALLENGE</div><div class="question" id="question"></div><div class="hint" id="hint"></div><div class="answer hidden" id="answer"></div></div><div class="buttons"><button class="new" id="new">🎲 New Challenge</button><button class="show" id="reveal">👀 Show Answer</button></div></section></div></main><script>
+(()=>{const el=id=>document.getElementById(id),rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;let game='flash',max=10,shown=false;const labels={flash:'⚡ Flash Challenge',missing:'🧩 Missing Number',factor:'🕵️ Factor Detective',mistake:'🔍 Find the Mistake'};function next(){let a=rand(2,max),b=rand(2,max),q='',answer='',hint='';if(game==='flash'){q=`${a} × ${b} = ?`;answer=a*b;hint='Say the answer!'}if(game==='missing'){const left=Math.random()<.5;q=left?`? × ${b} = ${a*b}`:`${a} × ? = ${a*b}`;answer=left?a:b;hint='Find the missing factor!'}if(game==='factor'){let target=a*b,pairs=[];for(let x=1;x<=max;x++){let y=target/x;if(Number.isInteger(y)&&y<=max&&x<=y)pairs.push(`${x} × ${y}`)}q=`TARGET: ${target}`;answer=pairs.join('  •  ');hint=`Find factor pairs using numbers 1–${max}!`}if(game==='mistake'){let value=a*b+(Math.random()<.5?-1:1)*rand(1,5);q=`${a} × ${b} = ${value}`;answer=`❌ ${a} × ${b} = ${a*b}`;hint='Find the mistake and correct it!'}el('question').textContent=q;el('answer').textContent=answer;el('hint').textContent=hint;shown=false;el('answer').classList.add('hidden');el('reveal').textContent='👀 Show Answer'}document.querySelectorAll('[data-game]').forEach(btn=>btn.onclick=()=>{game=btn.dataset.game;document.querySelectorAll('[data-game]').forEach(x=>x.classList.toggle('active',x===btn));el('gameTitle').textContent=labels[game];next()});document.querySelectorAll('[data-level]').forEach(btn=>btn.onclick=()=>{max=+btn.dataset.level;document.querySelectorAll('[data-level]').forEach(x=>x.classList.toggle('on',x===btn));next()});el('new').onclick=next;el('reveal').onclick=()=>{shown=!shown;el('answer').classList.toggle('hidden',!shown);el('reveal').textContent=shown?'🙈 Hide Answer':'👀 Show Answer'};next()})();
+</script></body></html>
